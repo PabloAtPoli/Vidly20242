@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.db import models
 
 class Genre(models.Model):
+    list_display = ('ID', 'name')
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -13,7 +14,7 @@ class Movie(models.Model):
     release_year = models.IntegerField()
     number_in_stock = models.IntegerField()
     daily_rate = models.FloatField()
-#   genre = models.ForeignKey(Genre, on_delete=modSET_NULL, null=True_NULL, null=True)
+# genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     date_created = models.DateTimeField(default=timezone.now)
 

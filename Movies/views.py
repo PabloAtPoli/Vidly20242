@@ -11,7 +11,7 @@ def index(request):
     movies = Movie.objects.all()
     # output = ', '.join([m.title for m in movies])
     return render(request, 'movies/index.html', {'movies': movies})
-
+    # return render(request, 'index.html', {'movies': movies})
 def detail(request, movie_id):
     """Show a single movie and its details"""
 
